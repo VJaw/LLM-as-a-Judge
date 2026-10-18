@@ -37,4 +37,13 @@ jobs:
 
       - name: Run Promptfoo evaluation
         run: |
-          npx promptfoo@latest eval -c tests/promptfooconfig.yaml
+          npx promptfoo@latest eval -c tests/promptfooconfig.yaml -o results.json -o results.html   # CHANGED
+
+      - name: Upload eval results                         
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promptfoo-results
+          path: |
+            results.json
+            results.html
