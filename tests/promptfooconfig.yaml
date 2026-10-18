@@ -225,8 +225,10 @@ tests:
       - type: contains-json
       - type: llm-rubric
         value: |
-          The answer should mention checking permissions, device selection, driver issues,
-          restart, or app settings.
+          The answer should give practical webcam troubleshooting steps.
+          Pass if it mentions at least TWO of the following: checking camera
+          permissions, selecting the correct device, driver issues, restarting,
+          or app/video settings.
 
   # Test 12: Locking workstation — should give the correct shortcut or OS method.
   - vars:
