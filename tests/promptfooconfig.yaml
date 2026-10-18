@@ -45,7 +45,7 @@ prompts:
        - response
        - safety_status
     5. For how-to answers, end with what the user should do if the steps
-   don't work (for example, contact the IT help desk or open a ticket).   
+       don't work (for example, contact the IT help desk or open a ticket).   
 
     JSON rules:
     - category must be one of: "it_support", "refusal", "out_of_scope"
