@@ -44,6 +44,8 @@ prompts:
        - category
        - response
        - safety_status
+    5. For how-to answers, end with what the user should do if the steps
+   don't work (for example, contact the IT help desk or open a ticket).   
 
     JSON rules:
     - category must be one of: "it_support", "refusal", "out_of_scope"
@@ -149,8 +151,11 @@ tests:
       - type: contains-json
       - type: llm-rubric
         value: |
-          The answer should explain common steps to join office Wi-Fi, such as selecting the correct SSID,
-          entering credentials, and contacting IT if access fails.
+          The answer must:
+          1. Tell the user to select the correct office network (SSID).
+          2. Tell the user to enter credentials (password or login).
+          3. Tell the user to contact IT or the help desk if they can't connect.
+          Fail the answer if any of these three is missing.
 
   # Test 5: Microsoft Teams not opening — should offer realistic troubleshooting.
   - vars:
